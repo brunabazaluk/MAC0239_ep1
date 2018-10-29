@@ -8,12 +8,24 @@
 
 \begin{document}
 
-\title{EP 1 - Sudoku}%replace X with the appropriate number
+\title{\textbf{EP 1 - Sudoku}}%replace X with the appropriate number
 \author{Bruna Bazaluk M Videira\\ %replace with your name
 \\ nUSP: 9797002
-MAC0239 - Introducao a Logica} %if necessary, replace with your course title
- 
+\\ \textbf{MAC0239 - Introducao a Logica e Verificacao de Programas}} %if necessary, replace with your course title
+
 \maketitle
 
+
+\large{}
+
+Minha ideia foi codificar as regras do sudoku e transforma-las em CNFs utilizando mapas de Karnaugh. As regras codificadasforam:
+\begin{itemize}
+\item Um unico valor por posicao
+\item Um unico valor por linha
+\item Um unico valor por coluna
+\item Um unico valor por quadrante
+\end{itemize}
+
+Como sao 4 opcoes para valores, considerei a sentenca: $(p \wedge -q \wedge -r \wedge -s) \lor (-p \wedge q \wedge -r \wedge -s) \lor (-p \wedge -q \wedge r \wedge -s) \lor (-p \wedge -q \wedge -r \wedge s) $ e para cada regra, p, q, r e s teriam significados diferentes. Porem, a expressao acima nao e uma CNF, entao, apos aplicar o mapa de Karnaugh, cheguei a seguinte expressao: $ (p \lor q \lor r \lor s) \wedge (~p \lor ~q) \wedge  (~p \lor ~r)  (~p \lor ~s)  (~q \lor ~r)  (~q \lor ~s)  (~r \lor ~s)  $, que foi aplicada em meu codigo.
 
 \end{document}

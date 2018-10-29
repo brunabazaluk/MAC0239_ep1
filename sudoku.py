@@ -39,9 +39,10 @@ while sudoku != '':
         if sudoku[i] != []:
             sudoku[i]=sudoku[i].split(' ')
     
-    
+    for i in range(l-2):
+        sudoku[i]=[int(sudoku[i][0]), int(sudoku[i][1]), int(sudoku[i][2])]
 
-    for i in range(l-1):
+    for i in range(l-2):
         for j in range(4):
             if j == sudoku[i][2]:
                 cnf &= (x[sudoku[i][0]][sudoku[i][1]][sudoku[i][2]])
@@ -79,11 +80,11 @@ while sudoku != '':
 
     if solution.success:
         print("Solution %d:\n" % n)
-            for i in range(4):
-                for j in range(4):
-                    for k in range(4):
-                        if solution[x[i][j][k]]:
-                            sol[i][j] = k
+        for i in range(4):
+            for j in range(4):
+                for k in range(4):
+                    if solution[x[i][j][k]]:
+                        sol[i][j] = k
 
         print("%d %d | %d %d" % (sol[0][0], sol[0][1], sol[0][2], sol[0][3]))
         print("%d %d | %d %d" % (sol[1][0], sol[1][1], sol[1][2], sol[1][3]))
